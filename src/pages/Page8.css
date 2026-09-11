@@ -1,0 +1,334 @@
+.page8 {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(255, 224, 207, 0.65),
+      transparent 48%
+    ),
+    linear-gradient(
+      135deg,
+      #fffaf4,
+      #f8eee6,
+      #fff8f1
+    );
+
+  color: #4a3429;
+
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* subtle texture */
+.page8::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    radial-gradient(
+      rgba(150, 110, 80, 0.08) 1px,
+      transparent 1px
+    );
+
+  background-size: 30px 30px;
+  opacity: 0.3;
+
+  pointer-events: none;
+}
+
+/* INTRO */
+
+.page8-intro {
+  position: absolute;
+  z-index: 5;
+
+  width: 90%;
+  max-width: 800px;
+
+  text-align: center;
+
+  animation: introReveal 2.5s ease forwards;
+}
+
+.page8-intro p {
+  margin-bottom: 22px;
+
+  font-size: clamp(
+    22px,
+    4vw,
+    42px
+  );
+
+  font-weight: 400;
+
+  opacity: 0;
+
+  animation: introTextReveal 2s ease forwards;
+}
+
+.page8-intro p:nth-child(2) {
+  animation-delay: 2.2s;
+}
+
+.page8-intro span {
+  display: block;
+
+  margin-top: 30px;
+
+  font-size: clamp(
+    15px,
+    2vw,
+    20px
+  );
+
+  font-style: italic;
+
+  opacity: 0;
+
+  animation: introTextReveal 2s ease forwards;
+
+  animation-delay: 4.5s;
+}
+
+@keyframes introTextReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* LYRICS */
+
+.lyrics-container {
+  width: 90%;
+  max-width: 950px;
+
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lyrics-card {
+  width: 100%;
+
+  padding: 35px 30px;
+
+  text-align: center;
+
+  border-radius: 24px;
+
+  background:
+    rgba(255, 252, 248, 0.58);
+
+  border:
+    1px solid rgba(
+      180,
+      140,
+      105,
+      0.18
+    );
+
+  box-shadow:
+    0 25px 70px
+    rgba(110, 75, 50, 0.12);
+
+  backdrop-filter: blur(8px);
+
+  animation:
+    lyricReveal 1.2s ease forwards;
+}
+
+.lyrics-card p {
+  margin: 7px 0;
+
+  font-size: clamp(
+    16px,
+    2.2vw,
+    25px
+  );
+
+  line-height: 1.45;
+
+  letter-spacing: 0.2px;
+}
+
+.lyrics-line {
+  width: 55px;
+  height: 1px;
+
+  margin: 0 auto 22px;
+
+  background:
+    rgba(160, 115, 80, 0.45);
+}
+
+.lyrics-line:last-child {
+  margin:
+    22px auto 0;
+}
+
+/* END */
+
+.page8-ending {
+  position: absolute;
+  z-index: 10;
+
+  text-align: center;
+
+  animation:
+    endingReveal 1.5s ease forwards;
+}
+
+.page8-ending p {
+  margin-bottom: 30px;
+
+  font-size: clamp(
+    20px,
+    3vw,
+    30px
+  );
+
+  font-style: italic;
+}
+
+.page8-button {
+  padding:
+    13px 30px;
+
+  border:
+    1px solid
+    rgba(170, 125, 85, 0.45);
+
+  border-radius: 30px;
+
+  background:
+    rgba(255, 250, 245, 0.9);
+
+  color: #5b4031;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.page8-button:hover {
+  transform:
+    translateY(-3px);
+
+  background: #fff;
+
+  box-shadow:
+    0 12px 30px
+    rgba(120, 80, 50, 0.18);
+}
+
+/* ANIMATIONS */
+
+@keyframes introReveal {
+  from {
+    opacity: 0;
+    transform:
+      translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
+}
+
+@keyframes lyricReveal {
+  from {
+    opacity: 0;
+    transform:
+      translateY(18px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+@keyframes endingReveal {
+  from {
+    opacity: 0;
+    transform:
+      translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .page8-intro {
+    width: 88%;
+  }
+
+  .page8-intro p {
+    margin-bottom: 14px;
+  }
+
+  .page8-intro span {
+    margin-top: 22px;
+  }
+
+  .lyrics-container {
+    width: 91%;
+  }
+
+  .lyrics-card {
+    padding:
+      25px 18px;
+    border-radius: 20px;
+  }
+
+  .lyrics-card p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .page8-ending p {
+    width: 85vw;
+  }
+
+  .page8-button {
+    padding:
+      12px 25px;
+  }
+}

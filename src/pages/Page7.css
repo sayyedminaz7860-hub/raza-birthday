@@ -1,0 +1,679 @@
+.page7 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      #fffaf6 0%,
+      #f8e9df 55%,
+      #f0d9cb 100%
+    );
+
+  color: #58443b;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+.page7::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.15;
+
+  background-image:
+    radial-gradient(
+      rgba(130, 95, 75, 0.25) 1px,
+      transparent 1px
+    );
+
+  background-size: 6px 6px;
+}
+
+/* =========================
+   BASIC SLIDES
+   ========================= */
+
+.page7-slide {
+  position: relative;
+  z-index: 2;
+
+  max-width: 850px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  animation: fadeUp 1.6s ease both;
+}
+
+.page7-slide p {
+  font-size: clamp(30px, 5vw, 58px);
+
+  font-style: italic;
+
+  line-height: 1.35;
+}
+
+.main-message p {
+  max-width: 800px;
+
+  font-size: clamp(32px, 5vw, 62px);
+}
+
+/* =========================
+   MESSAGE CARDS
+   ========================= */
+
+.message-card {
+  position: relative;
+  z-index: 2;
+
+  width: min(650px, 85vw);
+
+  padding: 40px 35px;
+
+  text-align: center;
+
+  background: rgba(255, 250, 246, 0.72);
+
+  border: 1px solid rgba(160, 120, 95, 0.3);
+
+  box-shadow:
+    0 25px 70px rgba(100, 70, 50, 0.13);
+
+  animation: cardReveal 1.4s ease both;
+}
+
+.message-card span {
+  display: block;
+
+  margin-bottom: 18px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 20px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  color: #a77e62;
+}
+
+.message-card p {
+  font-size: clamp(25px, 4vw, 42px);
+
+  font-style: italic;
+
+  line-height: 1.35;
+}
+
+.special-message {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 250, 246, 0.9),
+      rgba(247, 226, 213, 0.75)
+    );
+}
+
+/* =========================
+   DISTANCE INTRO
+   ========================= */
+
+.distance-intro {
+  position: relative;
+  z-index: 2;
+
+  max-width: 800px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  animation: fadeScale 1.6s ease both;
+}
+
+.distance-intro p {
+  font-size: clamp(30px, 5vw, 56px);
+
+  font-style: italic;
+}
+
+/* =========================
+   CINEMATIC MAP
+   ========================= */
+
+.map-scene {
+  position: absolute;
+  inset: 0;
+
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #fffaf6,
+      #f2ded2
+    );
+
+  animation: mapReveal 2s ease both;
+}
+
+.map-title {
+  margin-bottom: 20px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 5px;
+
+  color: rgba(100, 75, 60, 0.55);
+}
+
+.map {
+  position: relative;
+
+  width: min(1000px, 90vw);
+  height: min(520px, 65vh);
+
+  overflow: hidden;
+
+  border: 1px solid rgba(150, 115, 90, 0.3);
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8eadf,
+      #f1ddcf
+    );
+
+  box-shadow:
+    0 30px 80px rgba(90, 60, 45, 0.16);
+
+  animation: mapZoom 8s ease both;
+}
+
+/* Map texture */
+
+.map-grid {
+  position: absolute;
+  inset: -20%;
+
+  opacity: 0.35;
+
+  background-image:
+    linear-gradient(
+      25deg,
+      transparent 48%,
+      rgba(150, 115, 90, 0.16) 49%,
+      transparent 50%
+    ),
+    linear-gradient(
+      110deg,
+      transparent 48%,
+      rgba(150, 115, 90, 0.12) 49%,
+      transparent 50%
+    );
+
+  background-size: 120px 90px;
+
+  transform: rotate(-4deg);
+}
+
+/* Roads */
+
+.map-road {
+  position: absolute;
+
+  height: 2px;
+
+  background: rgba(255, 250, 245, 0.8);
+
+  box-shadow:
+    0 0 5px rgba(160, 120, 95, 0.12);
+}
+
+.road-one {
+  width: 120%;
+
+  top: 25%;
+  left: -10%;
+
+  transform: rotate(14deg);
+}
+
+.road-two {
+  width: 110%;
+
+  top: 65%;
+  left: -5%;
+
+  transform: rotate(-12deg);
+}
+
+.road-three {
+  width: 70%;
+
+  top: 48%;
+  left: 15%;
+
+  transform: rotate(35deg);
+}
+
+/* Locations */
+
+.location {
+  position: absolute;
+
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 7px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  color: #76594c;
+
+  animation: pinReveal 1.5s ease both;
+}
+
+.you {
+  left: 17%;
+  top: 34%;
+}
+
+.raza {
+  right: 17%;
+  bottom: 28%;
+}
+
+/* Pin */
+
+.pin {
+  width: 16px;
+  height: 16px;
+
+  border-radius: 50% 50% 50% 0;
+
+  background: #a77e62;
+
+  transform: rotate(-45deg);
+
+  box-shadow:
+    0 0 15px rgba(167, 126, 98, 0.4);
+
+  animation: pinPulse 2s ease-in-out infinite;
+}
+
+.pin::after {
+  content: "";
+
+  position: absolute;
+
+  width: 6px;
+  height: 6px;
+
+  top: 5px;
+  left: 5px;
+
+  border-radius: 50%;
+
+  background: #fffaf6;
+}
+
+/* Connection */
+
+.connection-line {
+  position: absolute;
+
+  z-index: 3;
+
+  width: 60%;
+
+  height: 1px;
+
+  top: 50%;
+  left: 20%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(167, 126, 98, 0.75),
+      transparent
+    );
+
+  transform: rotate(-9deg);
+
+  box-shadow:
+    0 0 15px rgba(167, 126, 98, 0.35);
+}
+
+/* Moving light */
+
+.moving-light {
+  position: absolute;
+
+  top: -3px;
+  left: 0;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #a77e62;
+
+  box-shadow:
+    0 0 12px rgba(167, 126, 98, 0.7),
+    0 0 25px rgba(167, 126, 98, 0.35);
+
+  animation: travel 3.5s ease-in-out infinite;
+}
+
+/* Center text */
+
+.connected-text {
+  position: absolute;
+
+  z-index: 6;
+
+  top: 53%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  padding: 8px 16px;
+
+  background: rgba(255, 250, 246, 0.75);
+
+  font-size: clamp(18px, 2.5vw, 28px);
+
+  font-style: italic;
+
+  white-space: nowrap;
+
+  animation: connectedReveal 2s ease both;
+}
+
+/* =========================
+   FINAL
+   ========================= */
+
+.page7-final {
+  position: absolute;
+  inset: 0;
+
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #fffaf6,
+      #f4e1d6
+    );
+
+  animation: finalReveal 2s ease both;
+}
+
+.page7-final p {
+  max-width: 850px;
+
+  font-size: clamp(26px, 4.5vw, 52px);
+
+  font-style: italic;
+
+  line-height: 1.35;
+}
+
+/* Button */
+
+.page7-button {
+  margin-top: 25px;
+
+  padding: 13px 28px;
+
+  border: 1px solid rgba(145, 110, 85, 0.5);
+
+  border-radius: 30px;
+
+  background: rgba(255, 250, 245, 0.9);
+
+  color: #654e42;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.page7-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(100, 70, 50, 0.16);
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes mapReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes mapZoom {
+  from {
+    transform: scale(1.04);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes pinReveal {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pinPulse {
+  0%,
+  100% {
+    transform: rotate(-45deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(-45deg) scale(1.12);
+  }
+}
+
+@keyframes travel {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: calc(100% - 7px);
+  }
+}
+
+@keyframes connectedReveal {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes finalReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+  .page7-slide p {
+    font-size: 30px;
+  }
+
+  .main-message p {
+    font-size: 31px;
+  }
+
+  .message-card {
+    padding: 30px 22px;
+  }
+
+  .message-card p {
+    font-size: 25px;
+  }
+
+  .distance-intro p {
+    font-size: 30px;
+  }
+
+  .map {
+    width: 94vw;
+    height: 55vh;
+  }
+
+  .map-title {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+
+  .you {
+    left: 10%;
+    top: 32%;
+  }
+
+  .raza {
+    right: 10%;
+    bottom: 25%;
+  }
+
+  .connection-line {
+    width: 65%;
+    left: 17%;
+  }
+
+  .connected-text {
+    font-size: 17px;
+  }
+
+  .page7-final p {
+    font-size: 27px;
+  }
+}

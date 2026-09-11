@@ -1,0 +1,601 @@
+/* ============================= */
+/* PAGE 4 */
+/* ============================= */
+
+.page4 {
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 18% 22%,
+      rgba(255, 215, 190, 0.45),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 82% 75%,
+      rgba(245, 190, 205, 0.34),
+      transparent 40%
+    ),
+    #fff8ef;
+
+  color: #4d3a35;
+}
+
+
+/* Soft cinematic light */
+
+.page4::before {
+  content: "";
+
+  position: absolute;
+
+  width: 430px;
+  height: 430px;
+
+  border-radius: 50%;
+
+  background: rgba(244, 194, 174, 0.17);
+
+  filter: blur(100px);
+
+  animation: page4Glow 10s ease-in-out infinite alternate;
+}
+
+
+/* Subtle texture */
+
+.page4::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.24;
+
+  background-image:
+    radial-gradient(
+      rgba(120, 90, 75, 0.08) 0.6px,
+      transparent 0.6px
+    );
+
+  background-size: 7px 7px;
+}
+
+
+/* ============================= */
+/* CONTENT */
+/* ============================= */
+
+.page4-content {
+  width: 92%;
+  max-width: 900px;
+
+  height: 100%;
+
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+.page4-slide {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  animation: page4Reveal 1.7s ease forwards;
+}
+
+
+/* ============================= */
+/* OPENING */
+/* ============================= */
+
+.page4-slide > h2 {
+  max-width: 760px;
+
+  margin: 0;
+
+  padding: 0 15px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(25px, 5.5vw, 46px);
+
+  font-weight: 400;
+
+  line-height: 1.45;
+
+  color: #604b43;
+}
+
+
+/* ============================= */
+/* RAZA */
+/* ============================= */
+
+.raza-reveal h1 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(80px, 20vw, 170px);
+
+  font-weight: 400;
+
+  letter-spacing: 7px;
+
+  background: linear-gradient(
+    90deg,
+    #8b6556,
+    #d0a276,
+    #8b6556
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: razaReveal 2s ease forwards;
+}
+
+
+.raza-description {
+  margin-top: 25px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(17px, 4vw, 24px);
+
+  font-style: italic;
+
+  color: #80675e;
+}
+
+
+.raza-description span {
+  opacity: 0;
+
+  animation: descriptionReveal 1s ease forwards;
+}
+
+
+.raza-description span:nth-child(1) {
+  animation-delay: 0.7s;
+}
+
+
+.raza-description span:nth-child(2) {
+  animation-delay: 1.2s;
+}
+
+
+.raza-description span:nth-child(3) {
+  animation-delay: 1.7s;
+}
+
+
+/* ============================= */
+/* PERSONALITY CARDS */
+/* ============================= */
+
+.personality-card {
+  width: min(88vw, 570px);
+
+  padding: 42px 35px;
+
+  border: 1px solid rgba(191, 151, 110, 0.3);
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 253, 249, 0.88),
+      rgba(255, 243, 233, 0.68)
+    );
+
+  box-shadow:
+    0 22px 55px rgba(115, 82, 65, 0.13);
+
+  animation: cardFloat 1.8s ease forwards;
+}
+
+
+.card-emoji {
+  font-size: 38px;
+
+  margin-bottom: 17px;
+
+  animation: emojiPop 1.2s ease forwards;
+}
+
+
+.personality-card h2 {
+  margin: 0;
+
+  font-size: clamp(22px, 5vw, 34px);
+
+  letter-spacing: 2px;
+
+  font-weight: 500;
+
+  color: #765448;
+}
+
+
+.personality-card p {
+  max-width: 440px;
+
+  margin: 20px auto 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(16px, 3.8vw, 20px);
+
+  line-height: 1.6;
+
+  color: #80675e;
+}
+
+
+/* ============================= */
+/* BROTHER MATERIAL */
+/* ============================= */
+
+.brother-card {
+  padding: 30px 30px;
+}
+
+
+.support-list {
+  margin-top: 24px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(15px, 3.5vw, 19px);
+
+  color: #80675e;
+}
+
+
+.support-list span {
+  opacity: 0;
+
+  animation: listReveal 0.8s ease forwards;
+}
+
+
+.support-list span:nth-child(1) {
+  animation-delay: 0.4s;
+}
+
+
+.support-list span:nth-child(2) {
+  animation-delay: 0.9s;
+}
+
+
+.support-list span:nth-child(3) {
+  animation-delay: 1.4s;
+}
+
+
+.support-list span:nth-child(4) {
+  animation-delay: 1.9s;
+}
+
+
+/* ============================= */
+/* BASICALLY */
+/* ============================= */
+
+.basically-slide h2 {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(48px, 11vw, 90px);
+
+  font-weight: 400;
+
+  font-style: italic;
+
+  color: #8b6556;
+}
+
+
+/* ============================= */
+/* FINAL */
+/* ============================= */
+
+.final-slide {
+  gap: 38px;
+}
+
+
+.final-slide p {
+  max-width: 750px;
+
+  margin: 0;
+
+  padding: 0 15px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(23px, 5vw, 38px);
+
+  line-height: 1.5;
+
+  font-style: italic;
+
+  color: #694f47;
+}
+
+
+.page4-button {
+  padding: 15px 40px;
+
+  border: 1px solid rgba(178, 139, 98, 0.6);
+
+  border-radius: 50px;
+
+  background: rgba(255, 250, 244, 0.78);
+
+  color: #765e55;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(150, 110, 85, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+
+  animation: buttonReveal 1.3s ease forwards;
+}
+
+
+.page4-button:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255, 246, 237, 0.95);
+
+  box-shadow:
+    0 12px 32px rgba(150, 110, 85, 0.2);
+}
+
+
+.page4-button:active {
+  transform: scale(0.94);
+}
+
+
+/* ============================= */
+/* ANIMATIONS */
+/* ============================= */
+
+@keyframes page4Reveal {
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(24px)
+      scale(0.98);
+
+    filter: blur(5px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+    filter: blur(0);
+  }
+}
+
+
+@keyframes razaReveal {
+  0% {
+    opacity: 0;
+
+    transform: scale(0.88);
+
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+
+    filter: blur(0);
+  }
+}
+
+
+@keyframes descriptionReveal {
+  from {
+    opacity: 0;
+
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes cardFloat {
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(25px)
+      scale(0.96);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+@keyframes emojiPop {
+  0% {
+    opacity: 0;
+
+    transform: scale(0.7);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+
+@keyframes listReveal {
+  from {
+    opacity: 0;
+
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes buttonReveal {
+  from {
+    opacity: 0;
+
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes page4Glow {
+  0% {
+    transform:
+      translate(-100px, -50px)
+      scale(0.9);
+  }
+
+  100% {
+    transform:
+      translate(100px, 70px)
+      scale(1.15);
+  }
+}
+
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+  .page4-content {
+    width: 94%;
+  }
+
+  .personality-card {
+    width: 88vw;
+
+    padding: 30px 22px;
+  }
+
+  .brother-card {
+    padding: 27px 20px;
+  }
+
+  .card-emoji {
+    font-size: 32px;
+  }
+
+  .support-list {
+    gap: 10px;
+  }
+
+  .page4-button {
+    padding: 14px 34px;
+  }
+}
