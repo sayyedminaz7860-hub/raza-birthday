@@ -3,7 +3,7 @@ import "./Page6.css";
 
 function Page6({ goToPage7 }) {
   const [step, setStep] = useState(0);
-  const [ setAudioPlaying] = useState(false);
+  const [, setAudioPlaying] = useState(false);
 
   const audioRef = useRef(null);
 
@@ -52,8 +52,7 @@ function Page6({ goToPage7 }) {
     return () => {
       audio.removeEventListener("ended", handleEnded);
     };
-  }, [step]);
-
+}, [step, setAudioPlaying]);
   return (
     <div className="page6">
 

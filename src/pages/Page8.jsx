@@ -96,7 +96,7 @@ function Page8({ goToPage9 }) {
   const audioRef = useRef(null);
 
   const [currentLyric, setCurrentLyric] = useState(null);
-  const [ setAudioStarted] = useState(false);
+  const [, setAudioStarted] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
   const [showContinue, setShowContinue] = useState(false);
 
@@ -155,8 +155,7 @@ function Page8({ goToPage9 }) {
       audio.removeEventListener("timeupdate", updateLyrics);
       audio.removeEventListener("ended", handleEnded);
     };
-  }, []);
-
+}, [setAudioStarted]);
   return (
     <div className="page8">
 
